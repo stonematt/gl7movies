@@ -20,7 +20,7 @@ class MoviesController < ApplicationController
   # GET /movies/1/edit
   def edit
   end
-
+  
   # POST /movies
   # POST /movies.json
   def create
