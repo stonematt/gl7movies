@@ -9,6 +9,40 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id="container">
+      <div class="boxShadow">
+        <div id="header">
+          <h1>Breckenridge Grand Vacations - Grand Central</h1>
+        </div><!-- end #header -->
+
+        <div id="content">
+          <div id="logo">
+            <%= image_tag("logo.gif", :alt => "logo") %>
+          </div><!-- end #logo -->
+
+          <div id="slideShow">
+<!--BUG: this div isn't lining up right. -->
+            <%= image_tag("slide04.jpg", :alt => "gondola") %>
+          </div><!-- end #slideShow -->
+
+          <div id="navigation">
+            <div id="dvOperatorInfo">
+
+            </div>
+          </div><!-- end #navigation -->
+        
+          <div id="copy">
+            <div style="width:95%;margin:auto; font-style:normal; font-weight:normal; font-size: 12px;">
+              <div id="dvOwnerSvcsWorkspace" style="font-size:16px; width:95%;">
+                <div>
+                  <%= yield %>
+                </div>
+              </div>
+            </div>
+          </div><!--end #copy -->
+        </div><!--end #content -->
+      </div><!--end boxShadow -->
+    </div><!--end container -->
+    
   </body>
 </html>
