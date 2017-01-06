@@ -4,7 +4,13 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   def index
-    @movies = Movie.all
+    @movies = Movie.where(nil) # creates an anonymous scope
+    @movies = @movies.title(params[:title]) if params[:title].present?
+    @movies = @movies.rating(params[:rating]) if params[:rating].present?
+    @movies = @movies.lead(params[:lead]) if params[:lead].present?
+    @movies = @movies.director(params[:director]) if params[:director].present?
+    @movies = @movies.medium(params[:medium]) if params[:medium].present?
+    
   end
 
   # GET /movies/1
@@ -20,7 +26,7 @@ class MoviesController < ApplicationController
   # GET /movies/1/edit
   def edit
   end
-  
+
   # POST /movies
   # POST /movies.json
   def create
@@ -69,6 +75,6 @@ class MoviesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_params
-      params.require(:movie).permit(:Title, :Genre, :Rating, :Lead, :Director, :Year, :Type, :Duration, :Theater)
+      params.require(:movie).permit(:title, :genre, :rating, :lead, :director, :year, :medium, :duration, :theater)
     end
 end

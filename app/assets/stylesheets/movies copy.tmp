@@ -1,0 +1,587 @@
+// Place all the styles related to the Movies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@charset "UTF-8";
+body {
+  font: 100%/1.4 Helvetica, Arial, Verdana, sans-serif;
+  background-color: #666666;
+  background-image: url(asset_path("body.png"));
+  background-repeat: repeat-x;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  
+  -webkit-text-size-adjust: none;
+}
+ul, ol, dl {
+  padding: 0;
+  margin: 0;
+}
+a img {
+  border: none;
+}
+a:link {
+  color: #600;
+  text-decoration: none;
+}
+a:visited {
+  color: #600;
+  text-decoration: none;
+}
+a:hover, a:active, a:focus {
+  color: #600;
+  text-decoration: underline;
+}
+.error {
+  color: red !important;
+}
+#container {
+  width: 960px;
+  margin: 20px auto 0;
+  position: relative;
+}
+.boxShadow {
+  background: #FFF;
+  border: 1px solid #000;
+  width: 960px;  
+  
+  -moz-box-shadow:    1px 1px 5px 0px #000;
+  -webkit-box-shadow: 1px 1px 5px 0px #000;
+  box-shadow:         1px 1px 5px 0px #000;
+}
+
+/* HEADER & SLIDER */
+#header {
+  background: #000;
+  color: #888;
+  text-align: center;
+}
+#header a:link {
+  color: #FFF;
+  text-decoration: underline;
+}
+#header a:visited {
+  color: #FFF;
+  text-decoration: underline;
+}
+#header a:hover, a:active, a:focus {
+  color: #FFF;
+  text-decoration: underline;
+}
+#header h1 {
+  font-size: 28px;
+  font-weight: 500;
+  padding: 10px 0 8px 0;
+  margin: 0;
+}
+#header p {
+  color: #FFF;
+  font-size: 10px;
+  font-weight: 100;
+  position: absolute;
+  right: 15px;
+  text-align: right;
+  top: 5px;
+  z-index: 10;
+}
+#logo {
+  position: absolute;
+  z-index: 10;
+}
+#slideShow {
+  left: 0;
+  width: 960px;
+  height: 200px;
+  position: relative;
+}
+#slideShow a {
+  position: absolute;
+  right: 0;
+}
+#logos {
+  bottom: 5px;
+  position: absolute;
+  right: 10px;
+  z-index: 25;
+}
+#logos img {
+  padding: 0 5px;
+}
+
+/* NAVIGATION */
+#navigation {
+  background-color: #000;
+  font-size: 16px;
+  /* overflow: hidden; */
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  border: 1px solid #000;
+}
+
+
+#navigation ul {
+  color: #FFF;
+  text-align: center;
+  padding: 10px 0 10px 0;
+}
+
+
+/*
+#navigation ul li {
+  display: inline;
+  margin-left: -5px;
+  position: relative;
+}
+#navigation ul li a {
+  padding: 13px 25px 13px 25px;
+  color: #888;
+  text-decoration: none;
+  border-right: 1px solid #888;
+}
+
+#navigation ul li.lastChild a  {
+  border-right: 1px solid #000;
+}
+#navigation ul li a:hover {
+  background-color: #888;
+  color: #FFF;
+}
+#navigation ul li #active {
+  color: #FFF;
+}
+#navigation a:link {
+  color: #888;
+  text-decoration: none;
+}
+#navigation a:visited {
+  color: #888;
+  text-decoration: none;
+}
+#navigation a:hover, a:active, a:focus {
+  color: #FFF;
+  text-decoration: none;
+}
+#navigation .hideNavigation {
+  display: none;
+}
+*/
+/* SUB NAV PANEL */
+#navigation ul ul {
+  display: none;
+  text-align: left;
+  width: auto;
+  padding-right: 15px;
+  border: 1px solid #000;
+  border-top:none;
+}
+#navigation ul li:hover ul {
+  /*background: #888;*/ /* THIS WAS THE ORIGINAL NAV BG COLOR - UPDATED ON */
+  border: 1px solid #000;
+  border-top: none;
+  display: block;
+  left: 0;
+  position: absolute;
+  top: 30px;
+  z-index: 10;
+}
+#navigation ul ul li a {
+  border: none !important;
+  font-size: 12px;
+}
+#navigation ul ul li a:link {
+  color: #FFF;
+  text-decoration: none;
+  margin-left: 15px;
+  padding: 5px 0;
+}
+#navigation ul ul li a:visited {
+  color: #FFF;
+  text-decoration: none;
+}
+#navigation ul ul li a:hover, a:active, a:focus {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* SUB SUB NAV */
+#rentalStatus {
+  position: absolute !important;
+  width: 160px;
+}
+#rentalStatus ul {
+  display: none !important;
+  width: 210px !important;
+}
+#rentalStatus:hover ul {
+  display: block !important;
+  border: 1px solid #000 !important;
+  border-left: none !important;
+  left: 155px !important;
+  top: -10px !important;
+  
+  -moz-box-shadow:    1px 1px 3px 0px #888;
+  -webkit-box-shadow: 1px 1px 3px 0px #888;
+  box-shadow:         1px 1px 3px 0px #888;
+}
+
+/* CONTENT */
+#content {
+  background-color: #FFF;
+  background-image: url(asset_path("content.png"));
+  background-repeat: repeat-x;
+  min-height: 670px;
+  padding-bottom: 20px;
+  position: relative;
+  z-index: 999;
+}
+
+/* FORMS */
+#form {
+  background: #CCC;
+  float: left;
+  margin: 35px 0 0 30px;
+  min-height: 365px;
+  padding: 0 0 5px 0;
+  width: 200px;
+}
+#form h3 {
+  background: #333;
+  color: #888;
+  font-size: 16px;
+  font-weight: 200;
+  margin-top: 0;
+  padding: 12px 0px 8px;
+  text-align: center;
+}
+#form p {
+  font-size: 11px;
+  margin-left: 20px;
+  width: 160px;
+}
+input {
+  font-size: 11px;
+  padding: 1px;
+}
+#referralForm input {
+  margin: 5px 0 5px 22px;
+  width: 150px;
+}
+#referralForm #contactByLabel {
+  font-size: 11px;
+  margin: 0 0 0 27px;
+}
+#referralForm select#contactBy {
+  width: 80px;
+  margin: 5px 0 5px 5px;
+}
+#referralForm input#submit {
+  margin: 5px 0 10px 58px;
+  width: 80px;
+}
+.guestList {
+  min-height: 365px !important;
+  padding: 0 0 5px 0 !important;
+  width: 900px !important;
+}
+.guestList p {
+  margin: -5px auto 5px !important;
+  text-align: center !important;
+  width: 600px !important;
+}
+#guestList input {
+  margin: 5px 0 5px 22px;
+  width: 144px;
+}
+#guestList #guestContactLabel {
+  font-size: 11px;
+  margin: 0 0 0 30px;
+}
+#guestList input#guestContact {
+  width: 50px;
+  margin: 0px;
+}
+#guestList #ownerDetails {
+  margin: 0 auto;
+  width: 372px;
+}
+#guestList input#submit {
+  margin: 5px auto 0;
+  width: 80px;
+}
+.hasPlaceholder {
+  color: #777;
+}
+#email {
+  display: none;
+}
+
+/* COPY */
+#copy {
+  color: #333;
+  min-height: 325px;
+  margin: 12px auto;
+  top: 20px;
+  width: 98%;
+}
+#copy h1 {
+  font-size: 28px;
+  margin: 20px 0 0 0;
+  text-align: center;
+}
+#copy h2 {
+  font-size: 22px;
+  margin: 20px 0 0 0;
+  text-align: center;
+}
+#copy p {
+  margin: 10px 0;
+}
+#copy a:link {
+  color: #600;
+  text-decoration: none;
+}
+#copy a:visited {
+  color: #600;
+  text-decoration: none;
+}
+#copy a:hover, a:active, a:focus {
+  color: #600;
+  text-decoration: underline;
+}
+
+#emailCert {
+  margin: 0 auto;
+  position: relative;
+  width: 320px;
+}
+#emailCert label {
+  font-size: 11px;
+}
+#emailCert input {
+  margin: 5px 0;
+  width: 315px;
+}
+#emailCert textarea#message {
+  height: 28px;
+  width: 320px;
+}
+#emailCert input#submit {
+  float: right;
+  margin: 5px auto 0;
+  position: relative !important;
+  width: 80px;
+}
+#certificate {
+  margin: 10px auto 0;
+  width: 350px;
+}
+
+#shareOffers {
+  margin: 0 auto;
+  position: relative;
+  width: 320px;
+}
+#shareOffers label {
+  font-size: 11px;
+}
+#shareOffers input {
+  margin: 5px 0;
+  width: 315px;
+}
+#shareOffers textarea#message {
+  height: 28px;
+  width: 320px;
+}
+#shareOffers input#submit {
+  float: right;
+  margin: 5px auto 0;
+  position: relative !important;
+  width: 80px;
+}
+
+#rewardDollarBallance {
+  margin: 0 auto;
+  position: relative;
+  width: 320px;
+}
+#rewardDollarBallance label {
+  font-size: 11px;
+}
+#rewardDollarBallance input {
+  margin: 5px 0;
+  width: 315px;
+}
+#rewardDollarBallance textarea#message {
+  height: 28px;
+  width: 320px;
+}
+#rewardDollarBallance input#submit {
+  float: right;
+  margin: 5px auto 0;
+  position: relative !important;
+  width: 80px;
+}
+#missingCredit {
+  margin: 0 auto;
+  position: relative;
+  width: 320px;
+}
+#missingCredit label {
+  font-size: 11px;
+}
+#missingCredit input {
+  margin: 5px 0;
+  width: 315px;
+}
+#missingCredit textarea#message {
+  height: 28px;
+  width: 320px;
+}
+#missingCredit input#submit {
+  float: right;
+  margin: 5px auto 0;
+  position: relative !important;
+  width: 80px;
+}
+
+#offerContactWrapper {
+  float: right;
+  margin: 35px 30px 0 0;
+}
+#offer {
+  background: #CCC;
+  position: relative;
+  width: 200px;
+}
+#offer h3 {
+  background: #333;
+  color: #888;
+  font-size: 16px;
+  font-weight: 200;
+  margin: 0;
+  padding: 12px 0px 8px;
+  text-align: center;
+}
+#offerImage {
+  position: absolute;
+}
+#contactUs {
+  background: #CCC;
+  margin-top: 220px;
+  position: relative;
+  width: 200px;
+}
+#contactUs h3 {
+  background: #333;
+  color: #888;
+  font-size: 16px;
+  font-weight: 200;
+  margin: 0;
+  padding: 12px 0px 8px;
+  text-align: center;
+}
+#contact {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 18px 0 17px;
+  text-align: center;
+}
+#contact p {
+  margin: 5px;
+}
+#contact a:link {
+  color: #333;
+  text-decoration: underline;
+}
+#contact a:visited {
+  color: #333;
+  text-decoration: underline;
+}
+#contact a:hover, a:active, a:focus {
+  color: #333;
+  text-decoration: underline;
+}
+
+#startSharing {
+  margin: 25px auto;
+  position: relative;
+  width: 168px;
+}
+
+.accordian dt {
+  font-weight: bold;
+}
+.accordian dd {
+  margin-left: 20px;
+}
+#accordian a:link {
+  color: #600;
+  text-decoration: none;
+}
+#accordian a:visited {
+  color: #600;
+  text-decoration: none;
+}
+#accordian a:hover, a:active, a:focus {
+  color: #600;
+  text-decoration: underline;
+}
+#accordian .accordian dd a:link {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+#footer {
+  background: #000;
+  border: 1px solid #000;
+  color: #999999;
+  font-size: 11px;
+  margin: 0px 0 20px;
+  padding: 5px 0 0;
+  text-align: center;
+  width: 960px;
+  
+  -moz-box-shadow:    1px 1px 5px 0px #000;
+  -webkit-box-shadow: 1px 1px 5px 0px #000;
+  box-shadow:         1px 1px 5px 0px #000;
+}
+#footerInfo {
+  float: left;
+  margin: 17px 0 0 30px;
+}
+#logosBottom {
+  float: right;
+  margin: 0 25px 0 0;
+}
+#logosBottom img {
+  margin: 0 5px;
+}
+#footer a:link {
+  color: #FFF !important;
+  text-decoration: none;
+}
+#footer a:visited {
+  color: #FFF;
+  text-decoration: none;
+}
+#footer a:hover, a:active, a:focus {
+  color: #FFF;
+  text-decoration: underline;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  #navigation ul li a {
+    padding: 12px 25px 12px 25px;
+  }
+  #shareOffers input {
+    width: 320px;
+  }
+  input {
+    padding: 2px 2px 3px;
+  }
+  textarea {
+    padding: 2px 2px 3px;
+  }
+}
