@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Movies</h1>
+<h4>Search</h4>
 
-<%= form_tag "/movies", method: :get do %>
+<%= form_tag "/movies", method: :get, class: 'form-inline' do %>
   <%= text_field_tag :title, params[:title], placeholder: "Title" %>
   <%= text_field_tag :rating, params[:rating], placeholder:  "Rating" %>
   <%= text_field_tag :lead, params[:lead], placeholder:  "Lead" %>
@@ -12,8 +12,8 @@
 <% end %>
 
 
-<table>
-  <thead>
+<table class="table table-sm table-striped table-hover">
+  <thead class="thead-inverse">
     <tr>
       <th>Title</th>
       <th>Genre</th>

@@ -1,4 +1,5 @@
 class Movie < ApplicationRecord
+  include Filterable
 
   scope :title, -> (title) { where("title like ?", "%#{title}%") }
   scope :rating, -> (rating) { where("rating like ?", "%#{rating}%") }

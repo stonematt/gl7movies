@@ -4,13 +4,7 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   def index
-    @movies = Movie.where(nil) # creates an anonymous scope
-    @movies = @movies.title(params[:title]) if params[:title].present?
-    @movies = @movies.rating(params[:rating]) if params[:rating].present?
-    @movies = @movies.lead(params[:lead]) if params[:lead].present?
-    @movies = @movies.director(params[:director]) if params[:director].present?
-    @movies = @movies.medium(params[:medium]) if params[:medium].present?
-    
+    @movies = Movie.filter(filtering_params(params))
   end
 
   # GET /movies/1
@@ -76,5 +70,9 @@ class MoviesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_params
       params.require(:movie).permit(:title, :genre, :rating, :lead, :director, :year, :medium, :duration, :theater)
+    end
+    
+    def filtering_params(params)
+      params.slice(:title, :rating, :lead, :director, :medium)
     end
 end
