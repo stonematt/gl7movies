@@ -8,6 +8,7 @@ task :upload_movies => [ :environment] do
   raise "#{f} does not exist. Stoping import of movies" if !File.exists?(f)
   
   CSV.foreach(f, :headers => true) do |row|
-    Movie.create!(row.to_hash)
+    Movie.create(row.to_hash)
   end
 end
+
