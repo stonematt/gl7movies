@@ -7,6 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # seeds.rb
+
+class Movie < ActiveRecord::Base
+end
+
 require 'csv'
 
 f = "#{Rails.root}/db/csv/movies.csv"
@@ -14,6 +18,9 @@ f = "#{Rails.root}/db/csv/movies.csv"
 raise "#{f} does not exist. Stoping import of movies" if !File.exists?(f)
 
 CSV.foreach(f, :headers => true) do |row|
-  Movie.create!(row.to_hash)
-
+  # puts row.inspect
+  m=row.to_hash
+  puts m.inspect
+  Movie.create!(m)
 end
+
