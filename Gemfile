@@ -28,6 +28,11 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
 
+# adding gems for rails_bootstrap_sortable 
+# https://github.com/DuroSoft/rails_bootstrap_sortable
+gem 'momentjs-rails'
+gem 'rails_bootstrap_sortable'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

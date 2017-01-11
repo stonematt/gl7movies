@@ -1,35 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<h4>Search</h4>
+<div class="container">
+  <h4>Movies at Grand Lodge on Peak 7 - Theaters 3 and 4</h4>
+</div>
 
-<%= form_tag "/movies", method: :get, class: 'form-inline' do %>
-  <%= text_field_tag :title, params[:title], placeholder: "Title" %>
-  <%= text_field_tag :rating, params[:rating], placeholder:  "Rating" %>
+<div class="container mb-2">
+  <%= form_tag "/movies", method: :get, class: 'form-inline' do %>
+  <%= text_field_tag :title, params[:title], placeholder: "Title", size: 30 %>
+  <%= text_field_tag :genre, params[:genre], placeholder:  "Genre", size: 10 %>
+  <%= text_field_tag :rating, params[:rating], placeholder:  "Rating", size: 5 %>
   <%= text_field_tag :lead, params[:lead], placeholder:  "Lead" %>
   <%= text_field_tag :director, params[:director], placeholder:  "Director" %>
-  <%= text_field_tag :medium, params[:medium], placeholder:  "Type" %>
+  <%= text_field_tag :medium, params[:medium], placeholder:  "Type", size: 5 %>
   <%= submit_tag "Search" %>
-<% end %>
+  <% end %>
+</div>
 
+<div class="container">
+  <table class="table table-responsive table-striped table-hover sortable">
+    <thead >
+      <tr>
+        <th data-defaultsort="asc">Title</th>
+        <th>Genre</th>
+        <th>Rating</th>
+        <th>Lead</th>
+        <th>Director</th>
+        <th>Year</th>
+        <th>Type</th>
+        <th>Duration</th>
+        <th>Theater</th>
+        <!-- <th colspan="3"></th> -->
+      </tr>
+    </thead>
 
-<table class="table table-responsive table-striped table-hover">
-  <thead class="thead-inverse">
-    <tr>
-      <th>Title</th>
-      <th>Genre</th>
-      <th>Rating</th>
-      <th>Lead</th>
-      <th>Director</th>
-      <th>Year</th>
-      <th>Type</th>
-      <th>Duration</th>
-      <th>Theater</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @movies.each do |movie| %>
+    <tbody>
+      <% @movies.each do |movie| %>
       <tr>
         <td><%= movie.title %></td>
         <td><%= movie.genre %></td>
@@ -40,14 +45,14 @@
         <td><%= movie.medium %></td>
         <td><%= movie.duration %></td>
         <td><%= movie.theater %></td>
-        <td><%= link_to 'Show', movie %></td>
-        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <!-- <td><%= link_to 'Show', movie %></td>
+          <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
+          <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <br>
 
-<br>
-
-<%= link_to 'New Movie', new_movie_path %>
+  <!-- <%= link_to 'New Movie', new_movie_path %> -->

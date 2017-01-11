@@ -1,6 +1,9 @@
 // Custom bootstrap variables must be set or imported before bootstrap itself.
 @import "bootstrap";
 
+// support for https://github.com/DuroSoft/rails_bootstrap_sortable
+//*= require bootstrap-sortable
+@import "bootstrap-sortable";
 
 .float-right {
     float: right!important;
