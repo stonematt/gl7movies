@@ -73,6 +73,6 @@ class MoviesController < ApplicationController
     end
     
     def filtering_params(params)
-      params.slice(:title, :rating, :lead, :director, :medium)
+      params.slice(:title, :rating, :genre, :lead, :director, :medium)
     end
 end
