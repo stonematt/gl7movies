@@ -1,15 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container"><h4>Movies at Grand Lodge on Peak 7 - Theaters 3 and 4</h4>
+<div class="container">
+  <h4>Movies at Grand Lodge on Peak 7 - Theaters 3 and 4</h4>
 </div>
 
 <div class="container mb-2">
   <%= form_tag "/movies", method: :get, class: 'form-inline' do %>
-  <%= text_field_tag :title, params[:title], placeholder: "Title" %>
-  <%= text_field_tag :rating, params[:rating], placeholder:  "Rating" %>
+  <%= text_field_tag :title, params[:title], placeholder: "Title", size: 30 %>
+  <%= text_field_tag :genre, params[:genre], placeholder:  "Genre", size: 10 %>
+  <%= text_field_tag :rating, params[:rating], placeholder:  "Rating", size: 5 %>
   <%= text_field_tag :lead, params[:lead], placeholder:  "Lead" %>
   <%= text_field_tag :director, params[:director], placeholder:  "Director" %>
-  <%= text_field_tag :medium, params[:medium], placeholder:  "Type" %>
+  <%= text_field_tag :medium, params[:medium], placeholder:  "Type", size: 5 %>
   <%= submit_tag "Search" %>
   <% end %>
 </div>
