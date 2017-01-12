@@ -17,4 +17,5 @@
 //= require bootstrap-sortable
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require google_analytics
 //= require_tree .
