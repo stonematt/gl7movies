@@ -14,7 +14,7 @@
   <div class='form-group'>  
     <%= text_field_tag :lead, params[:lead], placeholder:  "Lead", class: 'form-control' %>
     <%= text_field_tag :director, params[:director], placeholder:  "Director", class: 'form-control' %>
-    <%= text_field_tag :medium, params[:medium], placeholder:  "Type", size: 5, class: 'form-control' %>
+    <%= select_tag :medium, options_for_select([['All',''],['3D','3D'],['Blu-Ray','Blu-Ray']]), class: 'form-control' %>
     <%= submit_tag "Search", class: 'btn btn-primary'%>
   </div>  
   <% end %>
@@ -52,11 +52,11 @@
         <!-- <td><%= link_to 'Show', movie %></td>
           <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
           <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-  <br>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br>
 
   <!-- <%= link_to 'New Movie', new_movie_path %> -->
