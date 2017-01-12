@@ -1,34 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
-  <h4>Movies at Grand Lodge on Peak 7 - Theaters 3 and 4</h4>
+<div class="container-fluid">
+  <h3>Movies at Grand Lodge on Peak 7 - Theaters 3 and 4</h3>
 </div>
 
-<div class="container mb-2">
+<div class="container-fluid mb-2">
   <%= form_tag "/movies", method: :get, class: 'form-inline' do %>
-  <%= text_field_tag :title, params[:title], placeholder: "Title", size: 30 %>
-  <%= text_field_tag :genre, params[:genre], placeholder:  "Genre", size: 10 %>
-  <%= text_field_tag :rating, params[:rating], placeholder:  "Rating", size: 5 %>
-  <%= text_field_tag :lead, params[:lead], placeholder:  "Lead" %>
-  <%= text_field_tag :director, params[:director], placeholder:  "Director" %>
-  <%= text_field_tag :medium, params[:medium], placeholder:  "Type", size: 5 %>
-  <%= submit_tag "Search" %>
+  <div class='form-group'>
+    <%= text_field_tag :title, params[:title], placeholder: "Title", size: 30, class: 'form-control' %>
+    <%= text_field_tag :rating, params[:rating], placeholder:  "Rating", size: 5, class: 'form-control' %>
+    <%= text_field_tag :genre, params[:genre], placeholder:  "Genre", size: 10, class: 'form-control' %>
+  </div>  
+  <div class='form-group'>  
+    <%= text_field_tag :lead, params[:lead], placeholder:  "Lead", class: 'form-control' %>
+    <%= text_field_tag :director, params[:director], placeholder:  "Director", class: 'form-control' %>
+    <%= text_field_tag :medium, params[:medium], placeholder:  "Type", size: 5, class: 'form-control' %>
+    <%= submit_tag "Search", class: 'btn btn-primary'%>
+  </div>  
   <% end %>
 </div>
 
-<div class="container">
-  <table class="table table-responsive table-striped table-hover sortable">
+<div class="container-fluid">
+  <table class="table table-sm table-bordered table-responsive table-striped table-hover sortable">
     <thead >
       <tr>
         <th data-defaultsort="asc">Title</th>
-        <th>Genre</th>
         <th>Rating</th>
-        <th>Lead</th>
-        <th>Director</th>
+        <th>Genre</th>
+        <th>Lead/Director</th>
+        <!-- <th>Director</th> -->
         <th>Year</th>
         <th>Type</th>
         <th>Duration</th>
-        <th>Theater</th>
+        <!-- <th>Theater</th> -->
         <!-- <th colspan="3"></th> -->
       </tr>
     </thead>
@@ -37,14 +41,14 @@
       <% @movies.each do |movie| %>
       <tr>
         <td><%= movie.title %></td>
-        <td><%= movie.genre %></td>
-        <td><%= movie.rating %></td>
-        <td><%= movie.lead %></td>
-        <td><%= movie.director %></td>
-        <td><%= movie.year %></td>
-        <td><%= movie.medium %></td>
-        <td><%= movie.duration %></td>
-        <td><%= movie.theater %></td>
+        <td class='tdsmall'><%= movie.rating %></td>
+        <td class='tdsmall'><%= movie.genre %></td>
+        <td class='tdsmall'><%= movie.lead %>/ <%= movie.director %></td>
+        <!-- <td><<%= movie.director %></td> -->
+        <td class='tdsmall'><%= movie.year %></td>
+        <td class='tdsmall text-nowrap'><%= movie.medium %></td>
+        <td class='tdsmall'><%= movie.duration %></td>
+        <!-- <td class='tdsmall'><%= movie.theater %></td> -->
         <!-- <td><%= link_to 'Show', movie %></td>
           <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
           <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
