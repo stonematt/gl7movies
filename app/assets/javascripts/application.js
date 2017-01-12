@@ -12,9 +12,9 @@
 //=
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require tether
-//= require bootstrap-sprockets
 //= require moment
 //= require bootstrap-sortable
+//= require bootstrap-sprockets
+//= require turbolinks
 //= require_tree .
